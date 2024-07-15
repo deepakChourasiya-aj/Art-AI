@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
 
 const startServer = async () => {
   try {
-    connectDB("mongodb+srv://deepak1812002:deepakch@openai.1y6zgyj.mongodb.net/openai?retryWrites=true&w=majority");
+    connectDB(process.env.DB_URI);
     app.listen(8080, () => console.log('Server started on port 8080'));
   } catch (error) {
     console.log(error);
